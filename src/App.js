@@ -29,7 +29,7 @@ function App() {
         HeartHealth: "The potassium and magnesium in radish microgreens help regulate blood pressure and support cardiovascular health.",
         BoneHealth: "Calcium and vitamin K in radish microgreens are essential for maintaining strong bones and preventing osteoporosis.",
       },
-      price: "",
+      price: "5",
       status: "available"
     },
     {
@@ -55,7 +55,7 @@ function App() {
         HeartHealth: "The potassium and antioxidants support cardiovascular health by helping to regulate blood pressure and reduce inflammation.",
         BoneHealth: "Rich in vitamin K and calcium, broccoli sprouts microgreens contribute to maintaining strong bones and preventing osteoporosis.",
       },
-      price: "",
+      price: "5",
       status: "available"
     },
     {
@@ -83,7 +83,7 @@ function App() {
         SkinHealth: "The vitamin E in sunflower microgreens is beneficial for skin health, helping to protect and repair skin cells.",
         EnergyBoost: "The B vitamins in sunflower microgreens play a key role in energy metabolism, helping to convert food into energy efficiently.",
       },
-      price: "",
+      price: "5",
       status: "available"
     },
     {
@@ -111,7 +111,7 @@ function App() {
         SkinHealth: "The high levels of vitamins and antioxidants in wheatgrass microgreens are beneficial for skin health, helping to protect and repair skin cells.",
         CholesterolAndBloodPressure: "Some studies suggest that wheatgrass can help lower cholesterol levels and regulate blood pressure, promoting heart health.",
       },
-      price: "",
+      price: "5",
       status: "available"
     },
     {
@@ -141,7 +141,7 @@ function App() {
         EyeHealth: "Microgreens like kale are rich in lutein and zeaxanthin, which are beneficial for eye health.",
         SkinHealth: "The vitamins and antioxidants in salad mix microgreens help protect and repair skin cells, promoting healthy skin.",
       },
-      price: "",
+      price: "5",
       status: "available"
     },
   ];

@@ -9,7 +9,7 @@ const Story = () => {
       
       <h2>Microgreens :: Save Money. Live Better. | So Easy, A Caveman Can Do It. | More Saving. More Doing.</h2>
       
-      <p>Growing your own microgreens in your kitchen is easy and requires minimal resources, effort, and time. It's a sustainable and rewarding way to produce your own food and contribute to a healthy lifestyle. Unfortunately, many people fail to meet their daily nutritional needs. Statistics reveal that a significant portion of the population doesn't consume enough essential nutrients and fiber, which can lead to chronic diseases like heart disease and diabetes. Adding microgreens to your diet offers a straightforward yet potent method to enhance your health.</p>
+      <p>Growing your own microgreens in your kitchen is easy and requires minimal resources, effort, and time. It's a sustainable and rewarding way to produce your own food, and contribute to a healthy lifestyle because unfortunately, many people fail to meet their daily nutritional needs. Statistics reveal that a significant portion of the population doesn't consume enough essential nutrients and fiber, which can lead to chronic diseases like heart disease and diabetes. Adding microgreens to your diet offers a straightforward yet potent method to enhance your health.</p>
       
       <h2>What We Do :: Let's Go Places. | Can You Hear Me Now? Good. | Because You're Worth It.</h2>
       

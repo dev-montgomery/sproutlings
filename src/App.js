@@ -6,6 +6,7 @@ import Contact from "./components/Contact";
 
 function App() {
 
+  // state variables --------------------------------------------
   const [currContent, setCurrContent] = useState(null);
 
   const updateCurrContent = content => {
@@ -15,6 +16,7 @@ function App() {
     setCurrContent(null);
   };
 
+  // static variables -------------------------------------------
   const microgreens = {
     radish: {
       name: "Radish Microgreens",
@@ -173,6 +175,7 @@ function App() {
     },
   };
 
+  // update availability ----------------------------------------
   microgreens.radish.availability = false;
   microgreens.broccolisprouts.availability = false;
   microgreens.sunflowershoots.availability = false;
@@ -180,10 +183,11 @@ function App() {
   microgreens.wheatgrass.availability = false;
   microgreens.saladmix.availability = false;
 
-  const products = Object.keys(microgreens).map(key => {
+  // jsx variables ---------------------------------------------- 
+  const leftside = Object.keys(microgreens).slice(0, 3).map((key) => {
     const microgreen = microgreens[key];
     return (
-      <li key ={key}>
+      <li key={key} className="left-side">
         <Card
           updateCurrContent={updateCurrContent}
           name={microgreen.name}
@@ -196,16 +200,28 @@ function App() {
       </li>
     );
   });
-
+  
+  const rightside = Object.keys(microgreens).slice(3).map((key) => {
+    const microgreen = microgreens[key];
+    return (
+      <li key={key} className="right-side">
+        <Card
+          updateCurrContent={updateCurrContent}
+          name={microgreen.name}
+          description={microgreen.description}
+          diet={microgreen.diet}
+          benefits={microgreen.benefits}
+          price={microgreen.price}
+          availability={microgreen.availability}
+        />
+      </li>
+    );
+  });
+  
   return (
     <div className="App">
       <div className="app-container">
-        {/* Add logo here */}
-        <ul className="products-container">{products}</ul>
-        <section className={currContent === null ? "hidden" : "visible"}>
-          <div onClick={() => closeCurrContent()}>x</div>
-          <p>{currContent}</p>
-        </section>
+        {/* header */}
         <nav>
           <ul class="nav-icons">
             <li><a href="https://www.instagram.com" target="_blank" rel="noreferrer"><i class="fa-brands fa-instagram"></i></a></li>
@@ -214,6 +230,29 @@ function App() {
             <li onClick={() => updateCurrContent(<Contact />)}><i class="fa-solid fa-cart-shopping"></i></li>
           </ul>
         </nav>
+
+        {/* main */}
+        <main>
+          <ul className="left-side-container">
+            {leftside}
+          </ul>
+          
+          <section>
+            <h2>Sproutlings Microgreens</h2>
+          </section>
+          
+          <ul className="right-side-container">
+            {rightside}
+          </ul>
+        </main>
+
+        <div className={currContent === null ? "hidden" : "visible"}>
+          <div onClick={() => closeCurrContent()}>x</div>
+          <section>{currContent}</section>
+        </div>
+
+        {/* footer */}
+        <p>Sproutlings Microgreens LLC</p>
       </div>
     </div>
   );

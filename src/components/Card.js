@@ -13,12 +13,24 @@ const Card = ({ updateCurrContent, name, description, diet, benefits, price, ava
 
   const dietSection = Object.keys(diet).map(key => {
     const meal = parseCamelCase(key);
-    return meal;
+    const info = diet[key];
+    return (
+      <section>
+        <h2>{meal}</h2>
+        <p>{info}</p>
+      </section>
+    )
   });
 
   const benefitsSection = Object.keys(benefits).map(key => {
     const topic = parseCamelCase(key);
-    return topic;
+    const info = benefits[key];
+    return (
+      <section>
+        <h2>{topic}</h2>
+        <p>{info}</p>
+      </section>
+    )
   });
 
   return (

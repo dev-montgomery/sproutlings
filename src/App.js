@@ -1,8 +1,8 @@
-import './App.css';
+import "./App.css";
 import { useState } from "react";
 import Card from "./components/Card";
-// import Story from "./components/Story";
-// import Contact from "./components/Contact";
+import Story from "./components/Story";
+import Contact from "./components/Contact";
 
 function App() {
 
@@ -199,19 +199,19 @@ function App() {
 
   return (
     <div className="App">
-      <div className='app-container'>
+      <div className="app-container">
         {/* Add logo here */}
-        <ul className='products-container'>{products}</ul>
-        <section>
-          <h2 onClick={() => closeCurrContent()}>X</h2>
+        <ul className="products-container">{products}</ul>
+        <section className={currContent === null ? "hidden" : "visible"}>
+          <div onClick={() => closeCurrContent()}>x</div>
           <p>{currContent}</p>
         </section>
         <nav>
           <ul class="nav-icons">
             <li><a href="https://www.instagram.com" target="_blank" rel="noreferrer"><i class="fa-brands fa-instagram"></i></a></li>
             <li><a href="https://www.facebook.com" target="_blank" rel="noreferrer"><i class="fa-brands fa-facebook"></i></a></li>
-            <li><a href="story.html"><i class="fa-solid fa-book-open"></i></a></li>
-            <li><a href="contact.html"><i class="fa-solid fa-envelope"></i></a></li>
+            <li onClick={() => updateCurrContent(<Story />)}><i class="fa-solid fa-book-open"></i></li>
+            <li onClick={() => updateCurrContent(<Contact />)}><i class="fa-solid fa-cart-shopping"></i></li>
           </ul>
         </nav>
       </div>

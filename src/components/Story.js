@@ -9,11 +9,13 @@ const Story = () => {
       
       <h2>Microgreens :: Save Money. Live Better. | So Easy, A Caveman Can Do It. | More Saving. More Doing.</h2>
       
-      <p>Growing your own microgreens in your kitchen is easy and requires minimal resources, effort, and time. It's a sustainable and rewarding way to produce your own food, and contribute to a healthy lifestyle because unfortunately, many people fail to meet their daily nutritional needs. Statistics reveal that a significant portion of the population doesn't consume enough essential nutrients and fiber, which can lead to chronic diseases like heart disease and diabetes. Adding microgreens to your diet offers a straightforward yet potent method to enhance your health.</p>
+      <p>I personally want to express that growing your own microgreens in your kitchen is easy and requires minimal resources, effort, and time. And not only is it a sustainable and rewarding way to produce your own food, it can be a significant contribution to your health. Unfortunately, many people fail to meet their daily nutritional needs. Statistics reveal that a significant portion of the population doesn't consume enough essential nutrients and fiber, which can lead to chronic diseases like heart disease and diabetes. Adding microgreens to your diet offers a straightforward yet potent method to enhance your health.</p>
       
       <h2>What We Do :: Let's Go Places. | Can You Hear Me Now? Good. | Because You're Worth It.</h2>
       
       <p>If you're not inclined to grow your own microgreens, consider purchasing ours and discover how they can enhance your diet and health. Our microgreens are cultivated in a controlled indoor environment, ensuring consistent temperature regulation and protection from pests. We maintain strict hygiene standards with clean equipment, hand hygiene practices, and the use of sterile gloves. Choosing high-quality, untreated seeds from trusted suppliers minimizes contamination risks, while nutrient-dense soil promotes the growth of nutrient-rich microgreens. We prioritize clean, potable water for irrigation, employing bottom-watering techniques to keep foliage dry and prevent fungal issues and rot. To further mitigate risks, we enhance air quality with purifiers and fans, and provide optimal full-spectrum lighting to simulate natural light cycles.</p>
+
+      <p>a closing word</p>
     </div>
   )
 };

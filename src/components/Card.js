@@ -1,12 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-const Card = ({ name, description, diet, benefits, price, availability }) => {
-
-  const [currentSection, setCurrentSection] = useState(null);
-  
-  const toggleSection = (section) => {
-    setCurrentSection(currentSection === section ? null : section);
-  };
+const Card = ({ updateCurrContent, name, description, diet, benefits, price, availability }) => {
 
   const parseCamelCase = camelCaseString => {
     const words = camelCaseString.match(/^[a-z]+|[A-Z][a-z]*/g);
@@ -19,22 +13,34 @@ const Card = ({ name, description, diet, benefits, price, availability }) => {
 
   const dietSection = Object.keys(diet).map(key => {
     const meal = parseCamelCase(key);
-    return meal;
+    const info = diet[key];
+    return (
+      <section>
+        <h2>{meal}</h2>
+        <p>{info}</p>
+      </section>
+    )
+  });
+
+  const benefitsSection = Object.keys(benefits).map(key => {
+    const topic = parseCamelCase(key);
+    const info = benefits[key];
+    return (
+      <section>
+        <h2>{topic}</h2>
+        <p>{info}</p>
+      </section>
+    )
   });
 
   return (
     <div className='card-container'>
       <h2>{name} <i class="fa-solid fa-sm fa-dollar-sign"></i>{price} <span>{availability}</span></h2>
       <ul className='info-container'>
-        <li onClick={() => toggleSection(1)}>description</li>
-        <li onClick={() => toggleSection(2)}>diet</li>
-        <li onClick={() => toggleSection(3)}>benefits</li>
+        <li onClick={() => updateCurrContent(description)}>description</li>
+        <li onClick={() => updateCurrContent(dietSection)}>diet</li>
+        <li onClick={() => updateCurrContent(benefitsSection)}>benefits</li>
       </ul>
-      <section>
-        {currentSection === 1 && <p>{description}</p>}
-        {currentSection === 2 && <p>{dietSection}</p>}
-        {currentSection === 3 && <p>Content of Section 3</p>}
-      </section>
     </div>    
   )
 };

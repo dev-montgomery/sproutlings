@@ -1,75 +1,190 @@
 /* root */
+:root {
+  --fresh-green: #4CAF50;
+  --sunny-yellow: #FFEB3B;
+  --rich-earth-brown: #795548;
+  --clean-white: #FFFFFF;
+  --cool-teal: #009688;
+}
 
+.color-scheme {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
 
-/* basic */
+.color-scheme .cd {
+  width: 20px;
+  height: 20px;
+}
+
+.c1 {
+  background-color: var(--fresh-green);
+  border: 1px solid var(--fresh-green);
+}
+
+.c2 {
+  background-color: var(--sunny-yellow);
+  border: 1px solid var(--sunny-yellow);
+}
+
+.c3 {
+  background-color: var(--rich-earth-brown);
+  border: 1px solid var(--rich-earth-brown);
+}
+
+.c4 {
+  background-color: var(--cool-teal);
+  border: 1px solid var(--cool-teal);
+}
+
+.c5 {
+  background-color: var(--clean-white);
+  border: 1px solid black;
+}
+
+/* elements */
+.fa {
+  color: var(--fresh-green);
+}
+
+.fa:hover {
+  color: var(--cool-teal);
+  cursor: pointer;
+}
+
+/* HEADER STYLES */
+.nav-icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 2rem;
+  gap: 2rem;
+}
+
+.nav-icons li i {
+  font-size: 2rem;
+}
+
+.nav-icons .tooltip {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.nav-icons .tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  top: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.nav-icons .tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* MAIN STYLES */
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+.app-container {
+  width: 90%;
+  background-color: var(--clean-white, #FFFFFF);
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  gap: 20px;
+  padding: 20px;
+}
+
+.card .card-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  width: 100%;
+  gap: 1rem;
+}
+
+.card .availability {
+  font-size: 1.2rem;
+}
+
+.card .green-available {
+  color: var(--cool-teal);
+}
+
+.card .brown-unavailable {
+  color: var(--rich-earth-brown);
+}
+
+/* FOOTER STYLE */
+footer {
+  text-align: center;
+  padding: 10px;
+  margin-top: 20px;
+}
+
+footer p {
+  margin: 0;
+}
+
+/* POP-UP STYLES */
 .hidden {
   display: none;
 }
 
 .visible {
-  display: flex;
-}
-
-/* specific */
-/* Base styling to center content */
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  height: 100dvh;
-  width: 100vw;
-  margin: 0;
-  font-family: Arial, sans-serif;
-}
-
-.app-container {
-  border: 1px solid red;
-  width: 90%;
+  display: block;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--clean-white, #FFFFFF);
   padding: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
 }
 
-/* Media query for desktop */
-/* @media (min-width: 1024px) {
-  .app-container {
-    width: 80%;
+.visible section {
+  margin-bottom: 20px;
+}
+
+.visible div {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 20px;
+  color: #777;
+}
+
+@media (min-width: 768px) {
+  main {
+    grid-template-columns: 1fr 1.5fr 1fr;
   }
-} */
-
-nav .nav-icons {
-  display: flex;
-  flex-direction: row;
-  -ms-flex-align: end;
-  gap: 1rem;
 }
-/*
-.products-container {
-  display: grid;
-  grid-template-columns: 1fr 600px 1fr;
-  width: 100%;
-  max-width: 1200px;
-  padding: 0;
-  list-style: none;
-  margin: 0;
-}
-
-.left-side,
-.right-side {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-}
-
-.left-side {
-  grid-column: 1;
-  align-items: flex-start;
-}
-
-.right-side {
-  grid-column: 3;
-  align-items: flex-end;
-}
-
-.products-container li {
-  margin: 10px 0; /* Adjust margin as needed
-} */

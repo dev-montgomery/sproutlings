@@ -176,9 +176,9 @@ function App() {
   };
 
   // update availability ----------------------------------------
-  microgreens.radish.availability = false;
+  microgreens.radish.availability = true;
   microgreens.broccolisprouts.availability = false;
-  microgreens.sunflowershoots.availability = false;
+  microgreens.sunflowershoots.availability = true;
   microgreens.peashoots.availability = false;
   microgreens.wheatgrass.availability = false;
   microgreens.saladmix.availability = false;
@@ -221,17 +221,42 @@ function App() {
   return (
     <div className="App">
       <div className="app-container">
-        {/* header */}
-        <nav>
-          <ul class="nav-icons">
-            <li><a href="https://www.instagram.com" target="_blank" rel="noreferrer"><i class="fa-brands fa-instagram"></i></a></li>
-            <li><a href="https://www.facebook.com" target="_blank" rel="noreferrer"><i class="fa-brands fa-facebook"></i></a></li>
-            <li onClick={() => updateCurrContent(<Story />)}><i class="fa-solid fa-book-open"></i></li>
-            <li onClick={() => updateCurrContent(<Contact />)}><i class="fa-solid fa-cart-shopping"></i></li>
-          </ul>
-        </nav>
 
-        {/* main */}
+        <div className="color-scheme">
+          <div className="c1 cd"></div>
+          <div className="c2 cd"></div>
+          <div className="c3 cd"></div>
+          <div className="c4 cd"></div>
+          <div className="c5 cd"></div>
+        </div>
+
+        <header>
+          <nav>
+            <ul class="nav-icons">
+              <li className="tooltip">
+                <a href="https://www.instagram.com" target="_blank" rel="noreferrer">
+                  <i class="fa fa-brands fa-instagram"></i>
+                </a>
+                <span class="tooltiptext">Instagram</span>
+              </li>
+              <li className="tooltip">
+                <a href="https://www.facebook.com" target="_blank" rel="noreferrer">
+                  <i class="fa fa-brands fa-facebook"></i>
+                </a>
+                <span class="tooltiptext">Facebook</span>
+              </li>
+              <li className="tooltip" onClick={() => updateCurrContent(<Story />)}>
+                <i class="fa fa-solid fa-book-open"></i>
+                <span class="tooltiptext">About Us</span>  
+              </li>
+              <li className="tooltip" onClick={() => updateCurrContent(<Contact />)}>
+                <i class="fa fa-solid fa-cart-shopping"></i>
+                <span class="tooltiptext">Place Order</span>
+              </li>
+            </ul>
+          </nav>
+        </header>
+
         <main>
           <ul className="left-side-container">
             {leftside}
@@ -251,8 +276,9 @@ function App() {
           <section>{currContent}</section>
         </div>
 
-        {/* footer */}
-        <p>Sproutlings Microgreens LLC</p>
+        <footer>
+          <p>&copy; 2024 Sproutlings Microgreens LLC</p>
+        </footer>
       </div>
     </div>
   );

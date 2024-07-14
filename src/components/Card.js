@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 const Card = ({ updateCurrContent, name, description, diet, benefits, price, availability }) => {
 
@@ -6,7 +6,7 @@ const Card = ({ updateCurrContent, name, description, diet, benefits, price, ava
     const words = camelCaseString.match(/^[a-z]+|[A-Z][a-z]*/g);
     const formattedString = words
       .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-      .join(' ');
+      .join(" ");
   
     return formattedString;
   };
@@ -34,13 +34,14 @@ const Card = ({ updateCurrContent, name, description, diet, benefits, price, ava
   });
 
   return (
-    <div className='card-container'>
-      <h2>{name} <i class="fa-solid fa-sm fa-dollar-sign"></i>{price} <span>{availability}</span></h2>
-      <ul className='info-container'>
-        <li onClick={() => updateCurrContent(description)}>description</li>
-        <li onClick={() => updateCurrContent(dietSection)}>diet</li>
-        <li onClick={() => updateCurrContent(benefitsSection)}>benefits</li>
-      </ul>
+    <div className="card">
+      <h2 className="primary">{name}</h2>
+      <p className={availability ? "green-available availability" : "brown-unavailable availability"}>{availability ? "AVAILABLE" : "UNAVAILABLE"}</p>
+      <div className="card-info">
+        <button className="card-btn" onClick={() => updateCurrContent(description)}>description</button>
+        <button className="card-btn" onClick={() => updateCurrContent(dietSection)}>diet</button>
+        <button className="card-btn" onClick={() => updateCurrContent(benefitsSection)}>benefits</button>
+      </div>
     </div>    
   )
 };

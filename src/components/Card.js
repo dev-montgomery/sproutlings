@@ -39,7 +39,9 @@ const Card = ({ updateCurrContent, name, description, diet, benefits, price, ava
       <p className={availability ? "green-available availability" : "brown-unavailable availability"}>{availability ? "AVAILABLE" : "UNAVAILABLE"}</p>
       <div className="card-info">
         <button className="card-btn" onClick={() => updateCurrContent(description)}>description</button>
+        <p>|</p>
         <button className="card-btn" onClick={() => updateCurrContent(dietSection)}>diet</button>
+        <p>|</p>
         <button className="card-btn" onClick={() => updateCurrContent(benefitsSection)}>benefits</button>
       </div>
     </div>    

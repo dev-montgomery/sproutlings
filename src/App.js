@@ -179,8 +179,8 @@ function App() {
   microgreens.radish.availability = true;
   microgreens.broccolisprouts.availability = false;
   microgreens.sunflowershoots.availability = true;
-  microgreens.peashoots.availability = false;
-  microgreens.wheatgrass.availability = false;
+  microgreens.peashoots.availability = true;
+  microgreens.wheatgrass.availability = true;
   microgreens.saladmix.availability = false;
 
   // jsx variables ---------------------------------------------- 
@@ -272,7 +272,7 @@ function App() {
         </main>
 
         <div className={currContent === null ? "hidden" : "visible"}>
-          <div onClick={() => closeCurrContent()}>x</div>
+          <div className="close-window" onClick={() => closeCurrContent()}>X</div>
           <section>{currContent}</section>
         </div>
 

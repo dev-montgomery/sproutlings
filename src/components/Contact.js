@@ -2,7 +2,7 @@ import React from 'react';
 
 const Contact = () => {
   return (
-    <div className='contact-container'>
+    <section className='contact-container'>
       <h2>Thank you for your interest in our microgreens!</h2>
       <p>explanation of when to order, when to pay, and when orders are sent</p>
 
@@ -27,7 +27,7 @@ const Contact = () => {
       <p>Call us directly to place your order. Our friendly staff will assist you in confirming availability and completing your order:</p>
       <p>Contact Number: (555)123-4567</p>
       <p>We look forward to serving you and ensuring you receive the freshest microgreens for your culinary and health needs. Thank you for choosing us!</p>
-    </div>
+    </section>
   )
 };
 

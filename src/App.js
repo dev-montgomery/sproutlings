@@ -179,12 +179,11 @@ function App() {
   microgreens.radish.availability = true;
   microgreens.broccolisprouts.availability = false;
   microgreens.sunflowershoots.availability = true;
-  microgreens.peashoots.availability = false;
-  microgreens.wheatgrass.availability = false;
+  microgreens.peashoots.availability = true;
+  microgreens.wheatgrass.availability = true;
   microgreens.saladmix.availability = false;
 
-  // jsx variables ---------------------------------------------- 
-  const leftside = Object.keys(microgreens).slice(0, 3).map((key) => {
+  const products = Object.keys(microgreens).map((key) => {
     const microgreen = microgreens[key];
     return (
       <li key={key} className="left-side">
@@ -201,35 +200,9 @@ function App() {
     );
   });
   
-  const rightside = Object.keys(microgreens).slice(3).map((key) => {
-    const microgreen = microgreens[key];
-    return (
-      <li key={key} className="right-side">
-        <Card
-          updateCurrContent={updateCurrContent}
-          name={microgreen.name}
-          description={microgreen.description}
-          diet={microgreen.diet}
-          benefits={microgreen.benefits}
-          price={microgreen.price}
-          availability={microgreen.availability}
-        />
-      </li>
-    );
-  });
-  
   return (
     <div className="App">
       <div className="app-container">
-
-        <div className="color-scheme">
-          <div className="c1 cd"></div>
-          <div className="c2 cd"></div>
-          <div className="c3 cd"></div>
-          <div className="c4 cd"></div>
-          <div className="c5 cd"></div>
-        </div>
-
         <header>
           <nav>
             <ul class="nav-icons">
@@ -258,21 +231,13 @@ function App() {
         </header>
 
         <main>
-          <ul className="left-side-container">
-            {leftside}
-          </ul>
-          
-          <section>
-            <h2>Sproutlings Microgreens</h2>
-          </section>
-          
-          <ul className="right-side-container">
-            {rightside}
+          <ul className="products-container">
+            {products}
           </ul>
         </main>
 
         <div className={currContent === null ? "hidden" : "visible"}>
-          <div onClick={() => closeCurrContent()}>x</div>
+          <div className="close-window" onClick={() => closeCurrContent()}>X</div>
           <section>{currContent}</section>
         </div>
 

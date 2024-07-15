@@ -7,57 +7,23 @@
   --cool-teal: #009688;
 }
 
-.color-scheme {
-  position: absolute;
-  top: 10px;
-  left: 10px;
+/* APP STYLES */
+.app-container {
   display: flex;
-  flex-direction: row;
-  gap: 1rem;
-}
-
-.color-scheme .cd {
-  width: 20px;
-  height: 20px;
-}
-
-.c1 {
-  background-color: var(--fresh-green);
-  border: 1px solid var(--fresh-green);
-}
-
-.c2 {
-  background-color: var(--sunny-yellow);
-  border: 1px solid var(--sunny-yellow);
-}
-
-.c3 {
-  background-color: var(--rich-earth-brown);
-  border: 1px solid var(--rich-earth-brown);
-}
-
-.c4 {
-  background-color: var(--cool-teal);
-  border: 1px solid var(--cool-teal);
-}
-
-.c5 {
-  background-color: var(--clean-white);
-  border: 1px solid black;
-}
-
-/* elements */
-.fa {
-  color: var(--fresh-green);
-}
-
-.fa:hover {
-  color: var(--cool-teal);
-  cursor: pointer;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 100vw;
+  min-height: 100vh;
+  min-height: 100dvh;
 }
 
 /* HEADER STYLES */
 .nav-icons {
+  position: absolute;
+  top: 2rem;
+  left: 50%;
+  transform: translate(-50%, 0%);
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -97,41 +63,79 @@
   opacity: 1;
 }
 
+.fa {
+  color: var(--fresh-green);
+  transition: color 0.3s ease-in-out;
+}
+
+.fa:hover {
+  color: var(--cool-teal);
+  cursor: pointer;
+}
+
 /* MAIN STYLES */
-.App {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  min-height: 100dvh;
-}
-
-.app-container {
-  width: 90%;
-  background-color: var(--clean-white, #FFFFFF);
-  border-radius: 8px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-}
-
-main {
+.products-container {
   display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
-  gap: 20px;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 1.4rem;
+  width: 100%;
+}
+
+.products-container .card {
+  background-color: var(--clean-white);
   padding: 20px;
+}
+
+/* card styles */
+.card {
+  border-radius: 8px;
+  padding: 1rem;
+  width: 600px;
+  height: 100%;
+  background-image: url('./assets/microgreens.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .card .card-info {
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
   width: 100%;
-  gap: 1rem;
+  gap: 0.5rem;
+}
+
+.primary {
+  font-size: 2.2rem;
+  color: #333;
+}
+
+.card .card-info .card-btn {
+  display: inline-block;
+  outline: 0;
+  cursor: pointer;
+  text-align: center;
+  border: 0;
+  padding: 7px 16px;
+  min-height: 36px;
+  min-width: 36px;
+  color: var(--clean-white);
+  background: var(--fresh-green);
+  border-radius: 4px;
+  font-size: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 0px 0px, rgba(0, 0, 0, 0.2) 0px -1px 0px 0px inset;
+}
+
+.card .card-info .card-btn:hover {
+  background: var(--cool-teal);
+  color: var(--clean-white);
 }
 
 .card .availability {
-  font-size: 1.2rem;
+  font-weight: 600;
+  font-size: 1.4rem;
+  margin-bottom: 8px;
 }
 
 .card .green-available {
@@ -142,7 +146,7 @@ main {
   color: var(--rich-earth-brown);
 }
 
-/* FOOTER STYLE */
+/* FOOTER STYLES */
 footer {
   text-align: center;
   padding: 10px;
@@ -165,7 +169,7 @@ footer p {
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: var(--clean-white, #FFFFFF);
-  padding: 20px;
+  padding: 25px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
   border-radius: 8px;
 }
@@ -180,7 +184,18 @@ footer p {
   right: 10px;
   cursor: pointer;
   font-size: 20px;
-  color: #777;
+}
+
+.close-window {
+  background-color: #333;
+  color: var(--clean-white);
+  padding: 0 10px;
+  border-radius: 50%;
+  transition: background-color 0.5s ease;
+}
+
+.close-window:hover {
+  background-color: var(--rich-earth-brown);
 }
 
 @media (min-width: 768px) {

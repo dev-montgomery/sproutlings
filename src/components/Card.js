@@ -1,6 +1,6 @@
 import React from "react";
 
-const Card = ({ updateCurrContent, name, description, diet, benefits, price, availability }) => {
+const Card = ({ captainPlanet, name, description, diet, benefits, price, availability }) => {
 
   const parseCamelCase = camelCaseString => {
     const words = camelCaseString.match(/^[a-z]+|[A-Z][a-z]*/g);
@@ -36,11 +36,11 @@ const Card = ({ updateCurrContent, name, description, diet, benefits, price, ava
   return (
     <div className="card">
       <h2 className="primary">{name}</h2>
-      <p className={availability ? "green-available availability" : "brown-unavailable availability"}>{availability ? "AVAILABLE" : "UNAVAILABLE"}</p>
+      <p className={availability ? "green availability" : "brown availability"}>{availability ? "AVAILABLE" : "UNAVAILABLE"}</p>
       <div className="card-info">
-        <button className="card-btn" onClick={() => updateCurrContent(description)}>DESCRIPTION</button>
-        <button className="card-btn" onClick={() => updateCurrContent(dietSection)}>DIET</button>
-        <button className="card-btn" onClick={() => updateCurrContent(benefitsSection)}>BENEFITS</button>
+        <button className="card-btn" onClick={() => captainPlanet(description, 'description-styles')}>DESCRIPTION</button>
+        <button className="card-btn" onClick={() => captainPlanet(dietSection, 'diet-styles')}>DIET</button>
+        <button className="card-btn" onClick={() => captainPlanet(benefitsSection, 'benefits-styles')}>BENEFITS</button>
       </div>
     </div>    
   )

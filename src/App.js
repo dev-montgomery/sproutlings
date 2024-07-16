@@ -1,22 +1,36 @@
 import "./App.css";
-import { useState } from "react";
+import React, { useState } from 'react';
 import Card from "./components/Card";
 import Story from "./components/Story";
 import Contact from "./components/Contact";
 
 function App() {
 
-  // state variables --------------------------------------------
   const [currContent, setCurrContent] = useState(null);
-
+  const [className, setClassName] = useState('');
+  
   const updateCurrContent = content => {
     setCurrContent(content);
   };
+  
   const closeCurrContent = () => {
     setCurrContent(null);
   };
 
-  // static variables -------------------------------------------
+  const addClassName = classname => {
+    setClassName(classname);
+  };
+
+  const captainPlanet = (content, classname) => {
+    updateCurrContent(content);
+    addClassName(classname);
+  };
+
+  const undoCaptainPlanet = () => {
+    closeCurrContent();
+    addClassName('');
+  };
+
   const microgreens = {
     radish: {
       name: "Radish Microgreens",
@@ -182,13 +196,14 @@ function App() {
   microgreens.peashoots.availability = true;
   microgreens.wheatgrass.availability = true;
   microgreens.saladmix.availability = false;
-
+  // ------------------------------------------------------------
+  
   const products = Object.keys(microgreens).map((key) => {
     const microgreen = microgreens[key];
     return (
       <li key={key} className="left-side">
         <Card
-          updateCurrContent={updateCurrContent}
+          captainPlanet={captainPlanet}
           name={microgreen.name}
           description={microgreen.description}
           diet={microgreen.diet}
@@ -237,8 +252,10 @@ function App() {
         </main>
 
         <div className={currContent === null ? "hidden" : "visible"}>
-          <div className="close-window" onClick={() => closeCurrContent()}>X</div>
-          <section>{currContent}</section>
+          <div className={className}>
+            <div className="close-window" onClick={() => undoCaptainPlanet()}>X</div>
+            <section>{currContent}</section>
+          </div>
         </div>
 
         <footer>

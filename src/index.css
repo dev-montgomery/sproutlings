@@ -1,6 +1,6 @@
 /* root */
 :root {
-  --fresh-green: #4CAF50;
+  --fresh-green: #30b635;
   --sunny-yellow: #FFEB3B;
   --rich-earth-brown: #795548;
   --clean-white: #FFFFFF;
@@ -13,6 +13,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 2rem 0;
   min-width: 100vw;
   min-height: 100vh;
   min-height: 100dvh;
@@ -20,15 +21,11 @@
 
 /* HEADER STYLES */
 .nav-icons {
-  position: absolute;
-  top: 2rem;
-  left: 50%;
-  transform: translate(-50%, 0%);
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  padding: 2rem;
   gap: 2rem;
+  padding: 0;
+  margin: 0 0 2rem 0;
 }
 
 .nav-icons li i {
@@ -64,12 +61,12 @@
 }
 
 .fa {
-  color: var(--fresh-green);
+  color: var(--cool-teal);
   transition: color 0.3s ease-in-out;
 }
 
 .fa:hover {
-  color: var(--cool-teal);
+  color: var(--fresh-green);
   cursor: pointer;
 }
 
@@ -80,17 +77,13 @@
   grid-template-rows: repeat(3, 1fr);
   gap: 1.4rem;
   width: 100%;
+  padding: 0;
+  margin: 0 0 2rem 0;
 }
 
-.products-container .card {
-  background-color: var(--clean-white);
-  padding: 20px;
-}
-
-/* card styles */
 .card {
   border-radius: 8px;
-  padding: 1rem;
+  margin: 1rem;
   width: 600px;
   height: 100%;
   background-image: url('./assets/microgreens.png');
@@ -138,11 +131,11 @@
   margin-bottom: 8px;
 }
 
-.card .green-available {
+.card .green {
   color: var(--cool-teal);
 }
 
-.card .brown-unavailable {
+.card .brown {
   color: var(--rich-earth-brown);
 }
 
@@ -154,6 +147,7 @@ footer {
 }
 
 footer p {
+  color: var(--cool-teal);
   margin: 0;
 }
 
@@ -168,22 +162,39 @@ footer p {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: var(--clean-white, #FFFFFF);
+  background-color: #333;
+  color: var(--clean-white, #FFFFFF);
   padding: 25px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
   border-radius: 8px;
+  max-height: 90vh; /* Limits the height of the pop-up */
+  max-width: 90vw;  /* Limits the width of the pop-up */
+  overflow-y: auto; /* Adds vertical scroll if content overflows */
+  z-index: 1000; /* Ensure it is on top of the overlay */
 }
 
 .visible section {
   margin-bottom: 20px;
 }
 
-.visible div {
+.visible .close-window {
   position: absolute;
   top: 10px;
   right: 10px;
   cursor: pointer;
   font-size: 20px;
+}
+
+.description-section {
+
+}
+
+.diet-section {
+
+}
+
+.benefits-section {
+
 }
 
 .close-window {
@@ -198,8 +209,18 @@ footer p {
   background-color: var(--rich-earth-brown);
 }
 
-@media (min-width: 768px) {
-  main {
-    grid-template-columns: 1fr 1.5fr 1fr;
+@media (max-width: 1300px) {
+  .products-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media (max-width: 630px) {
+  .card {
+    width: 350px;
+  }
+
+  .visible {
+    min-width: 90vw;
   }
 }

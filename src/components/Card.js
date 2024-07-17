@@ -1,6 +1,6 @@
 import React from "react";
 
-const Card = ({ captainPlanet, name, description, diet, benefits, price, availability }) => {
+const Card = ({ captainPlanet, name, description, diet, benefits, availability }) => {
 
   const parseCamelCase = camelCaseString => {
     const words = camelCaseString.match(/^[a-z]+|[A-Z][a-z]*/g);
@@ -11,22 +11,22 @@ const Card = ({ captainPlanet, name, description, diet, benefits, price, availab
     return formattedString;
   };
 
-  const dietSection = Object.keys(diet).map(key => {
+  const dietSection = Object.keys(diet).map((key, index) => {
     const meal = parseCamelCase(key);
     const info = diet[key];
     return (
-      <section>
+      <section key={index}>
         <h2>{meal}</h2>
         <p>{info}</p>
       </section>
     )
   });
 
-  const benefitsSection = Object.keys(benefits).map(key => {
+  const benefitsSection = Object.keys(benefits).map((key, index) => {
     const topic = parseCamelCase(key);
     const info = benefits[key];
     return (
-      <section>
+      <section key={index}>
         <h2>{topic}</h2>
         <p>{info}</p>
       </section>

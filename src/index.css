@@ -23,7 +23,7 @@
 .nav-icons {
   display: flex;
   flex-direction: row;
-  gap: 2rem;
+  gap: 1rem;
   padding: 0;
   margin: 0 0 2rem 0;
 }
@@ -62,11 +62,15 @@
 
 .fa {
   color: var(--cool-teal);
+  padding: 1rem;
+  border-radius: 10px;
   transition: color 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
 }
 
 .fa:hover {
-  color: var(--fresh-green);
+  color: var(--sunny-yellow);
+  background-color: var(--cool-teal);
   cursor: pointer;
 }
 
@@ -139,6 +143,16 @@
   color: var(--rich-earth-brown);
 }
 
+.story-container, .contact-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.story-container h2 {
+  font-size: 1.6rem;
+}
+
 /* FOOTER STYLES */
 footer {
   text-align: center;
@@ -167,10 +181,10 @@ footer p {
   padding: 25px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
   border-radius: 8px;
-  max-height: 90vh; /* Limits the height of the pop-up */
-  max-width: 90vw;  /* Limits the width of the pop-up */
-  overflow-y: auto; /* Adds vertical scroll if content overflows */
-  z-index: 1000; /* Ensure it is on top of the overlay */
+  max-height: 90vh;
+  max-width: 90vw;
+  overflow-y: auto;
+  z-index: 1000;
 }
 
 .visible section {
@@ -185,16 +199,9 @@ footer p {
   font-size: 20px;
 }
 
-.description-section {
-
-}
-
-.diet-section {
-
-}
-
-.benefits-section {
-
+.description-styles {
+  padding: 1rem 1rem 0 1rem;
+  font-size: 1.2rem;
 }
 
 .close-window {
@@ -216,6 +223,10 @@ footer p {
 }
 
 @media (max-width: 630px) {
+  .nav-icons {
+    margin: 0;
+  }
+  
   .card {
     width: 350px;
   }

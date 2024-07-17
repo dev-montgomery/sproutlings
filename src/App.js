@@ -197,18 +197,18 @@ function App() {
   microgreens.wheatgrass.availability = true;
   microgreens.saladmix.availability = false;
   // ------------------------------------------------------------
-  
-  const products = Object.keys(microgreens).map((key) => {
+
+  const products = Object.keys(microgreens).map((key, index) => {
     const microgreen = microgreens[key];
     return (
-      <li key={key} className="left-side">
+      <li key={index} className="left-side">
         <Card
           captainPlanet={captainPlanet}
           name={microgreen.name}
           description={microgreen.description}
           diet={microgreen.diet}
           benefits={microgreen.benefits}
-          price={microgreen.price}
+          // price={microgreen.price}
           availability={microgreen.availability}
         />
       </li>
@@ -220,26 +220,26 @@ function App() {
       <div className="app-container">
         <header>
           <nav>
-            <ul class="nav-icons">
+            <ul className="nav-icons">
               <li className="tooltip">
                 <a href="https://www.instagram.com" target="_blank" rel="noreferrer">
-                  <i class="fa fa-brands fa-instagram"></i>
+                  <i className="fa fa-brands fa-instagram"></i>
                 </a>
-                <span class="tooltiptext">Instagram</span>
+                <span className="tooltiptext">Instagram</span>
               </li>
               <li className="tooltip">
                 <a href="https://www.facebook.com" target="_blank" rel="noreferrer">
-                  <i class="fa fa-brands fa-facebook"></i>
+                  <i className="fa fa-brands fa-facebook"></i>
                 </a>
-                <span class="tooltiptext">Facebook</span>
+                <span className="tooltiptext">Facebook</span>
               </li>
               <li className="tooltip" onClick={() => updateCurrContent(<Story />)}>
-                <i class="fa fa-solid fa-book-open"></i>
-                <span class="tooltiptext">About Us</span>  
+                <i className="fa fa-solid fa-book-open"></i>
+                <span className="tooltiptext">About Us</span>  
               </li>
               <li className="tooltip" onClick={() => updateCurrContent(<Contact />)}>
-                <i class="fa fa-solid fa-cart-shopping"></i>
-                <span class="tooltiptext">Place Order</span>
+                <i className="fa fa-solid fa-cart-shopping"></i>
+                <span className="tooltiptext">Place Order</span>
               </li>
             </ul>
           </nav>

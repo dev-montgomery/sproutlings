@@ -1,5 +1,6 @@
 {
   "name": "sproutlings",
+  "homepage": "https://dev-montgomery.github.io/sproutlings/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

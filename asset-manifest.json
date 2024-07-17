@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/sproutlings/static/css/main.7f3b1c1c.css",
+    "main.js": "/sproutlings/static/js/main.4082496b.js",
+    "static/media/microgreens.png": "/sproutlings/static/media/microgreens.d47dadb21a2f67eca811.png",
+    "index.html": "/sproutlings/index.html",
+    "main.7f3b1c1c.css.map": "/sproutlings/static/css/main.7f3b1c1c.css.map",
+    "main.4082496b.js.map": "/sproutlings/static/js/main.4082496b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7f3b1c1c.css",
+    "static/js/main.4082496b.js"
+  ]
+}
